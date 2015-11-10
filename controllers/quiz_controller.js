@@ -17,3 +17,14 @@ exports.answer = function(req, res) {
   if (current.respuesta(req.query.respuesta)) { c = 'Correcto'; }
   res.render('quizes/answer', {respuesta: c})
 };
+
+exports.listadopreguntas = function(req,res) {
+  var n = quiz.numQ();
+  var listado = "";
+
+  for(var i=0; i<n; i++) {
+    listado = listado.concat("Pregunta " + (i+1) + ": " + quiz.getQ(i) + "<br><br>");
+  }
+  
+  res.render('quizes/listadopreguntas', {lista: listado})
+};

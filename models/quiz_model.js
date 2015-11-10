@@ -55,5 +55,12 @@ function Quiz() {
 
 Quiz.prototype = new AbstractQuiz();
 Quiz.prototype.constructor = Quiz;
+Quiz.prototype.numQ = function() {
+  return this.q.length;
+}
+
+Quiz.prototype.getQ = function(x) {
+  return this.q[x]['pregunta'];
+}
 
 module.exports = Quiz;
