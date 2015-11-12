@@ -20,16 +20,13 @@ exports.answer = function(req, res) {
 
 exports.listadopreguntas = function(req,res) {
   var n = quiz.numQ();
-  var listado = "";
-  var id = req.params.id;
+  var array = new Array(n);
 
   for(var i=0; i<n; i++) {
-    listado = listado.concat("Pregunta " + (i+1) + ": " + quiz.getQ(i) + "<br><br>");
-    
-
+    array[i] = ("Pregunta " + (i+1) + ": " + quiz.getQ(i));
   }
 
-  res.render('quizes/listadopreguntas', {lista: listado})
+  res.render('quizes/listadopreguntas', {lista: array})
 };
 
 
@@ -42,9 +39,8 @@ exports.pregunta = function(req, res) {
   }
 
   else {
-    id = id - 1;
-    var cadena = "Pregunta " + (id+1) + ": " + quiz.getQ(id);
+   current = quiz.q[id-1];
 
-    res.render('quizes/question', {pregunta: cadena})
-  }
+   res.render('quizes/question', {pregunta: current.pregunta});
+ }
 };
