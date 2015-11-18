@@ -1,4 +1,4 @@
-## Práctica: Quiz. Generación, Favicon, Layouts, Controladores, Modelos
+## Práctica: Quiz. Diseño Adaptativo, Despliegue en Heroku, Mejoras
 
 ### Descripción de la Práctica
 
